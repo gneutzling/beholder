@@ -20,6 +20,9 @@ Reference:
 
 https://github.com/js-platform/node-webrtc
 - weird, java gtk2 and stuff, seem ocmplicated, maybe its using gtk to show the video
+
 http://peerjs.com
 - Seems better
 
+https://github.com/buildar/getting_started_with_webrtc
+- this seems to be the shit
