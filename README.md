@@ -16,6 +16,9 @@ Raspberry compatible server (but will start developing on x86 platform first)
 - omxplayer could be used to display the stream on rpi side, if using rpi camera maybe its all we need
 - use of usb microphone
  
+Dont know how yet:
+- catch video microphone with node and send in a socket
+
 Reference:
 
 https://github.com/js-platform/node-webrtc
@@ -26,3 +29,6 @@ http://peerjs.com
 
 https://github.com/buildar/getting_started_with_webrtc
 - this seems to be the shit
+
+https://github.com/RightClickHarder/TwitchCast/blob/master/Server/app.js
+- example of openning a socket stream with omxplayer
