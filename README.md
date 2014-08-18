@@ -32,3 +32,6 @@ https://github.com/buildar/getting_started_with_webrtc
 
 https://github.com/RightClickHarder/TwitchCast/blob/master/Server/app.js
 - example of openning a socket stream with omxplayer
+
+https://gist.github.com/kalkov/1744211
+- this IS the shit
