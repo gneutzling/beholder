@@ -1,8 +1,6 @@
-express = require('express')
-net = require('net')
-child = require('child_process')
-
-app = express.createServer();
+app = require('express')();
+net = require('net');
+child = require('child_process');
 
 app.get('/stream', function(req, res) {
   var server;
@@ -32,7 +30,7 @@ app.get('/stream', function(req, res) {
   });
 });
 
-app.listen(process.env.npm_package_config_port);
+app.listen(7777);
 
 onSpawnError = function(data) {
   return console.log(data.toString());
@@ -45,7 +43,7 @@ onSpawnExit = function(code) {
 };
 
 process.on('uncaughtException', function(err) {
-  return console.debug(err);
+  return console.log(err);
 });
 
 
