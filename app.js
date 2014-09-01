@@ -20,7 +20,7 @@ app.get('/stream', function(req, res) {
   });
   return server.listen(function() {
     var args, gst_muxer;
-    args = ['v4l2src', '!', 'video/x-raw-rgb,framerate=30/1', '!', 'ffmpegcolorspace', '!', 'vp8enc', 'speed=2', '!', 'queue2', '!', 'm.', 'autoaudiosrc', '!', 'audioconvert', '!', 'vorbisenc', '!', 'queue2', '!', 'm.', 'webmmux', 'name=m', 'streamable=true', '!', 'tcpclientsink', 'host=localhost', 'port=' + server.address().port];
+    args = ['v4l2src', '!', 'video/x-raw,width=640,height=480,framerate=15/1', '!', 'h264enc bitrate=1000', '!', 'video/x-h264,profile=high', '!', 'h264parse', '!', 'queue', '!', 'flvmux name=mux alsasrc device=hw:1'. '!'. 'audioresample', '!', 'audio/x-raw,rate=48000', '!', 'queue', '!', 'voaacenc', 'bitrate=32000', '!', 'queue', '!', 'mux. mux.', '!', 'tcpclientsink', 'host=localhost', 'port=' + server.address().port];
     gst_muxer = child.spawn('gst-launch', args, null);
     gst_muxer.stderr.on('data', onSpawnError);
     gst_muxer.on('exit', onSpawnExit);
