@@ -22,4 +22,3 @@ apt-get install libgstreamer1.0-0-dbg gstreamer1.0-tools libgstreamer-plugins-ba
 # This should be at package.json
 npm install -g express
 npm install -g net
-npm install -g child_process
