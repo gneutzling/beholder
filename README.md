@@ -35,3 +35,11 @@ https://github.com/RightClickHarder/TwitchCast/blob/master/Server/app.js
 
 https://gist.github.com/kalkov/1744211
 - this IS the shit
+
+
+status
+========
+
+http://www.raspberrypi.org/forums/viewtopic.php?t=6852&p=538740
+
+On this post this guy is trying to do the same thing this project aim, the gstreamer streaming part at least, and running on the same problems im having, it seams it is a bug on gstreamer and SPS NAL. We need to find a package for this or compile gstreamer from source with this patch.
