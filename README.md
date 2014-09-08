@@ -43,3 +43,10 @@ status
 http://www.raspberrypi.org/forums/viewtopic.php?t=6852&p=538740
 
 On this post this guy is trying to do the same thing this project aim, the gstreamer streaming part at least, and running on the same problems im having, it seams it is a bug on gstreamer and SPS NAL. We need to find a package for this or compile gstreamer from source with this patch.
+
+--------
+
+this could help: https://github.com/AndyA/psips
+
+it lookslike using pi own camera is quite simpler for that, lots of C code for streaming
+but since a chinese webcam w/ microphone is about 10 bucks and a pi camera is about 20 i think well need to support usb cameras for now at leasr
