@@ -57,3 +57,5 @@ Ok, done-it! video + audio streaming using gstreamer (omxh264 and faac) and ngin
 the pipe for gstramer is
 
 gst-launch-1.0 -evvv v4l2src ! "video/x-raw,width=320,height=240,framerate=15/1" ! omxh264enc target-bitrate=700000 control-rate=variable ! video/x-h264,profile=high ! h264parse ! queue ! flvmux name=mux alsasrc device=hw:1 ! audioresample ! audio/x-raw,rate=48000,channels=1 ! queue ! faac ! aacparse ! queue ! mux. mux. !  rtmpsink location=\"rtmp://localhost/rtmp/live live=1\"
+
+nginx config and package on arch: http://ftp.tuebingen.mpg.de/pub/kyb/towolf/raspberry-camera-streaming/
