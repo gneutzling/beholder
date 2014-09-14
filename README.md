@@ -50,3 +50,10 @@ this could help: https://github.com/AndyA/psips
 
 it lookslike using pi own camera is quite simpler for that, lots of C code for streaming
 but since a chinese webcam w/ microphone is about 10 bucks and a pi camera is about 20 i think well need to support usb cameras for now at leasr
+
+--------
+
+Ok, done-it! video + audio streaming using gstreamer (omxh264 and faac) and nginx, throu RTMP.
+the pipe for gstramer is
+
+gst-launch-1.0 -evvv v4l2src ! "video/x-raw,width=320,height=240,framerate=15/1" ! omxh264enc target-bitrate=700000 control-rate=variable ! video/x-h264,profile=high ! h264parse ! queue ! flvmux name=mux alsasrc device=hw:1 ! audioresample ! audio/x-raw,rate=48000,channels=1 ! queue ! faac ! aacparse ! queue ! mux. mux. !  rtmpsink location=\"rtmp://localhost/rtmp/live live=1\"
